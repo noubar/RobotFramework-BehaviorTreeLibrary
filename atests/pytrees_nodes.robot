@@ -225,6 +225,34 @@ Test Depth 5 Mix Args
     Should Be Equal As Strings     ${dummyArg1}  10
     Should Be Equal As Strings     ${dummyArg2}  3
 
+Test Inverter With Depth 5 Mix Args
+    All Should Pass
+    ...  -  inverter  f0
+    ...  -  One Should Pass
+    ...  -  -  f1  1
+    ...  -  -  f2  2  3
+    ...  -  -  All Should Pass
+    ...  -  -  -  One Should Pass
+    ...  -  -  -  -  Inverter  f1  4
+    ...  -  -  -  -  K1  5
+    ...  -  -  -  -  All Should Pass
+    ...  -  -  -  -  -  k1  6
+    ...  -  -  -  -  -  k2  7  8
+    ...  -  -  -  Log  i am a dummy log
+    ...  -  -  inverter f1  9
+    ...  -  One Should Pass
+    ...  -  -  K1  10
+    ...  -  -  K1  11
+
+    # Validation
+    Should Be Equal As Integers    ${k1}    ${1}
+    Should Be Equal As Integers    ${k2}    ${0}
+    Should Be Equal As Integers    ${k0}    ${0}
+    Should Be Equal As Integers    ${f1}    ${2}
+    Should Be Equal As Integers    ${f0}    ${1}
+    Should Be Equal As Strings     ${dummyArg1}  10
+    Should Be Equal As Strings     ${dummyArg2}  3
+
 Mix BT With Robot Keywrods
     # Log To Console  I am executed before bt
     k0

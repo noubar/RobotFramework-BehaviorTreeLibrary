@@ -20,7 +20,7 @@ def _make_tree(tokenized):
     This function gets a tokenized tree structure and converts it to a py_trees root
     """
     # The construction of the tree is easier to start from deepest member 
-    deepest = _get_deepest(tokenized)
+    deepest = _get_deepest(tokenized) # ['rootItemIndex','lastIndexOfRoot']
     # until there is no deeper element than the main parent itself
     # pack the deepest child to its parent
     counter = 0
@@ -29,9 +29,15 @@ def _make_tree(tokenized):
         last = deepest[1]
         root = get_bt_root(ControlNodes[tokenized[first]],str(counter))
         for i in range(first+2,last+1,2):
-            keyword = tokenized[i]
+            keyword = tokenized[i] #('keywordName', ['arg1','arg2',...])
             if isinstance(tokenized[i],tuple):
-                keyword = BTKeywordNode(tokenized[i][0],tokenized[i][1])
+                try: # if keywordName is decorator
+                    decoNumber = DecoratorNodes[tokenized[i][0].lower()]
+                    keyowrd_args = [] if not tokenized[i][1][1:] else tokenized[i][1][1:]
+                    keyword = BTKeywordNode(tokenized[i][1][0],keyowrd_args)
+                    keyword = get_bt_deco(decoNumber,str(counter),keyword)
+                except KeyError: # keywordName is not a decorator but robot keyword
+                    keyword = BTKeywordNode(tokenized[i][0],tokenized[i][1])
             root.add_child(keyword)
         tmp = tokenized[:first].copy()
         tmp.append(root)
