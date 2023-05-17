@@ -45,7 +45,6 @@ EXIT /B %ERRORLEVEL%
     call:test_robot
     if %result%==0 set /A result = %ERRORLEVEL%
     call rebot --name ATests --outputdir result -x rebot_xunit.xml result/output.xml
-    call python parsly.py
     call:cleanup
 EXIT /B %result%
 
