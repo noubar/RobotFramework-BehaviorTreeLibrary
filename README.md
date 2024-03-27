@@ -1,6 +1,6 @@
 # BehaviorTreeLibrary
 
-This project is a `proof of concept` implementation to integrate behavior trees in Robot Framework. The goal of this project is to test the feasibility of using behavior trees in automation testing and to evaluate whether it can improve test automation in Robot Framework. The results have been published in our 2023 ISSTA paper [`RobotBT: Behavior-Tree-Based Test-Case Specification for the Robot Framework`](https://doi.org/10.1145/3597926.3604924), which is available as open access.
+This project is a `proof of concept` implementation to integrate behavior trees in Robot Framework. The goal of this project is to test the feasibility of using behavior trees in automation testing and to evaluate whether it can improve test automation in Robot Framework. The results have been published in our 2023 ISSTA paper [`RobotBT: Behavior-Tree-Based Test-Case Specification for the Robot Framework`](https://doi.org/10.1145/3597926.3604924), which is available as open access publication.
 
 ```
 @inproceedings{PAB2023,
