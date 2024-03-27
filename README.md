@@ -1,8 +1,20 @@
 # BehaviorTreeLibrary
 
-This project is a `proof of concept` implementation to integrate behavior trees in Robot Framework. The goal of this project is to test the feasibility of using behavior trees in automation testing and to evaluate whether it can improve test automation in Robot Framework.
+This project is a `proof of concept` implementation to integrate behavior trees in Robot Framework. The goal of this project is to test the feasibility of using behavior trees in automation testing and to evaluate whether it can improve test automation in Robot Framework. The results have been published in our 2023 ISSTA paper [`RobotBT: Behavior-Tree-Based Test-Case Specification for the Robot Framework`](https://doi.org/10.1145/3597926.3604924), which is available as open access.
 
-The [`BehaviorTreeLibrary`](https://github.com/noubar/RobotFramework-BehaviorTreeLibrary) is a Python based library for the [Robot Framework](https://robotframework.org/) that provides behavior tree nodes as Robot Framewok keywords to add the behavior tree functionalities into Robot Framework.
+```
+@inproceedings{PAB2023,
+  title = {RobotBT: Behavior-Tree-Based Test-Case Specification for the Robot Framework},
+  author = {Sven Peldszus and Noubar Akopian and Thorsten Berger},  
+  doi = {10.1145/3597926.3604924},
+  year = {2023},
+  booktitle = {Proceedings of the ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)},
+  pages = {1503–1506},
+  note = {Open Access},
+}
+```
+
+The [`BehaviorTreeLibrary`](https://github.com/noubar/RobotFramework-BehaviorTreeLibrary) is a Python-based library for the [Robot Framework](https://robotframework.org/) that provides behavior tree nodes as Robot Framework keywords to add the behavior tree functionalities into Robot Framework.
 The library officially supports Python >= 3.7 and currently cannot be installed using pip.
 
 
