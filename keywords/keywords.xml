@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="BehaviorTreeLibrary" type="LIBRARY" format="ROBOT" scope="GLOBAL" generated="2025-01-21T23:08:54+00:00" specversion="6" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\__init__.py" lineno="12">
+<version>0.1.0</version>
+<doc>BehaviorTreeLibrary is a web testing library for Robot Framework.
+ new library or hacking the source code. See
+[https://github.com/robotframework/BehaviorTreeLibrary/blob/master/docs/extending/extending.rst#Plugins|plugin API]
+documentation for further details.
+
+Plugin API is new BehaviorTreeLibrary 4.0</doc>
+<tags>
+</tags>
+<inits>
+<init name="__init__" lineno="25">
+<arguments repr="max_repeat=0">
+<arg kind="POSITIONAL_OR_NAMED" required="false" repr="max_repeat=0">
+<name>max_repeat</name>
+<default>0</default>
+</arg>
+</arguments>
+<doc>BehaviorTreeLibrary can be imported with several optional arguments.
+- ``max_repeat``:
+  Default value for `timeouts` used with ``Repeat ...`` keywords.
+  max_repeat = 0 means that there is no limit in this case it is possible that the repeat keyword can land in an endless loop.</doc>
+<shortdoc>BehaviorTreeLibrary can be imported with several optional arguments. - ``max_repeat``:   Default value for `timeouts` used with ``Repeat ...`` keywords.   max_repeat = 0 means that there is no limit in this case it is possible that the repeat keyword can land in an endless loop.</shortdoc>
+</init>
+</inits>
+<keywords>
+<kw name="All Branches Should Be Executed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="381">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>All Branches Should Be Executed  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+excepts every branch, every control flow node (selector or sequence) is executed
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| *args      | string | Behavior Tree |
+
+Examples:
+| All Branches Should Be Executed  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>All Branches Should Be Executed  *args</shortdoc>
+</kw>
+<kw name="All Branches Should Be Passed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="437">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>All Branches Should Be Passed  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and excepts that every branch, every control flow node (selector or sequence) is passed
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| min_percentage | number | percentage given in numbers 1 means 1% |
+| *args      | string | Behavior Tree |
+
+Examples:
+| All Branches Should Be Passed  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>All Branches Should Be Passed  *args</shortdoc>
+</kw>
+<kw name="All Lines Should Be Executed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="409">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>All Lines Should Be Executed  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+excepts every line, every keyword is executed
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| *args      | string | Behavior Tree |
+
+Examples:
+| All Lines Should Be Executed  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>All Lines Should Be Executed  *args</shortdoc>
+</kw>
+<kw name="All Should Pass" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\BTNodes.py" lineno="85">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>All Should Pass *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+All Should Pass is alias of `Sequence`.
+
+Arguments:
+| Argument   | Type   | Description                     |
+| *args      | string | Children nodes in custom syntax |
+
+Examples:
+| All Should Pass  -  keyword1  -  keyword2 |</doc>
+<shortdoc>All Should Pass *args</shortdoc>
+</kw>
+<kw name="Assign Return As Global Variable" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\Helper.py" lineno="89">
+<arguments repr="variableName, keywordName, *kwArgs">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="variableName">
+<name>variableName</name>
+</arg>
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="keywordName">
+<name>keywordName</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*kwArgs">
+<name>kwArgs</name>
+</arg>
+</arguments>
+<doc>Assign Return As Global Variable  $VariableName  KeywordName
+
+The given keyword as argument will be executed and the return value will be saved as global variable.
+Difference between Suite and Global variable is that the global variable will still reachable 
+if the same robot instance continuos executing other test suite.
+This keyword can also be used as a child of behavior tree control node.
+
+Arguments:
+| Argument       | Type   | Description                                                       |
+| $VariableName  | string | Variable Name where the return of given keyword will be saved     |
+| KeywordName    | string | Keyword should have return value it will be saved after execution |
+
+Examples:
+| Assign Return As Global Variable   $variable   keyword |</doc>
+<shortdoc>Assign Return As Global Variable  $VariableName  KeywordName</shortdoc>
+</kw>
+<kw name="Assign Return As Scope Variable" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\Helper.py" lineno="21">
+<arguments repr="variableName, keywordName, *kwArgs">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="variableName">
+<name>variableName</name>
+</arg>
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="keywordName">
+<name>keywordName</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*kwArgs">
+<name>kwArgs</name>
+</arg>
+</arguments>
+<doc>Assign Return As Scope Variable  $VariableName  KeywordName
+
+Scope means either Test or Keyword. It is equivalent to local variable.
+
+The given keyword as argument will be executed and the return value will be saved in variable.
+This keyword can also be used as a child of behavior tree control node.
+
+Arguments:
+| Argument       | Type   | Description                                                       |
+| $VariableName  | string | Variable Name where the return of given keyword will be saved     |
+| KeywordName    | string | Keyword should have return value it will be saved after execution |
+
+Examples:
+| Assign Return As Global Variable   $variable   keyword |</doc>
+<shortdoc>Assign Return As Scope Variable  $VariableName  KeywordName</shortdoc>
+</kw>
+<kw name="Assign Return As Suite Variable" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\Helper.py" lineno="67">
+<arguments repr="variableName, keywordName, *kwArgs">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="variableName">
+<name>variableName</name>
+</arg>
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="keywordName">
+<name>keywordName</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*kwArgs">
+<name>kwArgs</name>
+</arg>
+</arguments>
+<doc>Assign Return As Suite Variable  $VariableName  KeywordName
+
+The given keyword as argument will be executed and the return value will be saved as suite variable.
+This keyword can also be used as a child of behavior tree control node.
+
+Arguments:
+| Argument       | Type   | Description                                                       |
+| $VariableName  | string | Variable Name where the return of given keyword will be saved     |
+| KeywordName    | string | Keyword should have return value it will be saved after execution |
+
+Examples:
+| Assign Return As Suite Variable   $variable   keyword |</doc>
+<shortdoc>Assign Return As Suite Variable  $VariableName  KeywordName</shortdoc>
+</kw>
+<kw name="Assign Return As Test Variable" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\Helper.py" lineno="45">
+<arguments repr="variableName, keywordName, *kwArgs">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="variableName">
+<name>variableName</name>
+</arg>
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="keywordName">
+<name>keywordName</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*kwArgs">
+<name>kwArgs</name>
+</arg>
+</arguments>
+<doc>Assign Return As Test Variable  $VariableName  KeywordName
+
+The given keyword as argument will be executed and the return value will be saved in variable.
+This keyword can also be used as a child of behavior tree control node.
+
+Arguments:
+| Argument       | Type   | Description                                                       |
+| $VariableName  | string | Variable Name where the return of given keyword will be saved     |
+| KeywordName    | string | Keyword should have return value it will be saved after execution |
+
+Examples:
+| Assign Return As Test Variable   $variable   keyword |</doc>
+<shortdoc>Assign Return As Test Variable  $VariableName  KeywordName</shortdoc>
+</kw>
+<kw name="Branches Should Be Executed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="484">
+<arguments repr="min_percentage, *args">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="min_percentage">
+<name>min_percentage</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until All Branches Are Executed  min_percentage  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and excepts the given precentage of Branches, control flow nodes (selector or sequence) are executed
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| min_percentage | number | percentage given in numbers 1 means 1% |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until All Branches Are Executed  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until All Branches Are Executed  min_percentage  *args</shortdoc>
+</kw>
+<kw name="Branches Should Be Passed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="548">
+<arguments repr="min_percentage, *args">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="min_percentage">
+<name>min_percentage</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Branches Should Be Executed  min_percentage  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and excepts the given percentage of branches, 
+every control flow nodes (selector or sequence) are executed
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| min_percentage | number | percentage given in numbers 1 means 1% |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Branches Should Be Executed  10  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Branches Should Be Executed  min_percentage  *args</shortdoc>
+</kw>
+<kw name="Conditioned Execution" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="614">
+<arguments repr="lines_execution_perc=None, lines_pass_perc=None, branches_execution_perc=None, branches_pass_perc=None, *args">
+<arg kind="POSITIONAL_OR_NAMED" required="false" repr="lines_execution_perc=None">
+<name>lines_execution_perc</name>
+<default>None</default>
+</arg>
+<arg kind="POSITIONAL_OR_NAMED" required="false" repr="lines_pass_perc=None">
+<name>lines_pass_perc</name>
+<default>None</default>
+</arg>
+<arg kind="POSITIONAL_OR_NAMED" required="false" repr="branches_execution_perc=None">
+<name>branches_execution_perc</name>
+<default>None</default>
+</arg>
+<arg kind="POSITIONAL_OR_NAMED" required="false" repr="branches_pass_perc=None">
+<name>branches_pass_perc</name>
+<default>None</default>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>       Repeat Until All Branches Are Executed  *args
+
+       The custom syntax of *args is explained in `Nodes Syntax`.
+
+       This keyword takes a behavior tree as input
+       and excepts the given min percentages are reached
+       Unless the tree fails
+n  
+       Arguments:
+       | Argument   | Type   | Description |
+       | lines_execution_perc | number | percentage of minimum lines to be executed given in numbers 1 means 1% |
+       | lines_pass_perc | number | percentage of minimum lines to be passed given in numbers 1 means 1% |
+       | branches_execution_perc | number | percentage of minimum branches to be executed given in numbers 1 means 1% |
+       | branches_pass_perc | number | percentage of minimum branches to be passed given in numbers 1 means 1% |
+       | *args      | string | Behavior Tree |
+
+       Examples:
+       | Conditioned Execution  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>       Repeat Until All Branches Are Executed  *args</shortdoc>
+</kw>
+<kw name="Fallback" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\BTNodes.py" lineno="46">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Fallback *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+Fallback is alias of `Selector`.
+
+Arguments:
+| Argument   | Type   | Description                     |
+| *args      | string | Children nodes in custom syntax |
+
+Examples:
+| Fallback  -  keyword1  -  keyword2 |</doc>
+<shortdoc>Fallback *args</shortdoc>
+</kw>
+<kw name="Lines Should Be Executed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="516">
+<arguments repr="min_percentage, *args">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="min_percentage">
+<name>min_percentage</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Lines Should Be Executed  min_percentage  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and excepts the given lines, keywords are executed
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| min_percentage | number | percentage given in numbers 1 means 1% |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Lines Should Be Executed  10  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Lines Should Be Executed  min_percentage  *args</shortdoc>
+</kw>
+<kw name="Lines Should Be Passed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="581">
+<arguments repr="min_percentage, *args">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="min_percentage">
+<name>min_percentage</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until All Branches Are Executed  min_percentage  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and excepts the given percentage of lines, keywords are passed 
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| min_percentage | number | percentage given in numbers 1 means 1% |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until All Branches Are Executed  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until All Branches Are Executed  min_percentage  *args</shortdoc>
+</kw>
+<kw name="One Should Pass" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\BTNodes.py" lineno="27">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>One Should Pass *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+One Should Pass is alias of `Selector`.
+
+Arguments:
+| Argument   | Type   | Description                     |
+| *args      | string | Children nodes in custom syntax |
+
+Examples:
+| One Should Pass  -  keyword1  -  keyword2 |</doc>
+<shortdoc>One Should Pass *args</shortdoc>
+</kw>
+<kw name="Repeat Until All Branches Are Executed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="51">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until All Branches Are Executed  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and keeps repeating all the tree until every branch, 
+every control flow node (selector or sequence) is executed at least for once.
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until All Branches Are Executed  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until All Branches Are Executed  *args</shortdoc>
+</kw>
+<kw name="Repeat Until All Branches Are Passed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="123">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until All Branches Are Passed  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and keeps repeating all the tree until every branch, 
+every control flow node (selector or sequence) is not only executed but also passed oin one of repeates
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until All Branches Are Passed  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until All Branches Are Passed  *args</shortdoc>
+</kw>
+<kw name="Repeat Until All Lines Are Executed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="87">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until All Lines Are Executed  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and keeps repeating all the tree until every line, 
+every keyword is executed at least for once
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until All Lines Are Executed  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until All Lines Are Executed  *args</shortdoc>
+</kw>
+<kw name="Repeat Until All Lines Are Passed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="159">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until All Lines Are Passed  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and keeps repeating all the tree until every line, 
+keyword not only executed but also passed at least for once
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until All Lines Are Passed  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until All Lines Are Passed  *args</shortdoc>
+</kw>
+<kw name="Repeat Until Branches Are Executed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="195">
+<arguments repr="min_percentage, *args">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="min_percentage">
+<name>min_percentage</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until Branches Are Executed  min_percentage  *args
+
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and keeps repeating all the tree until the given percentage of branches, 
+control flow nodes (selector or sequence) are executed
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| min_percentage | number | percentage given in numbers 1 means 1% |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until Branches Are Executed  10  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until Branches Are Executed  min_percentage  *args</shortdoc>
+</kw>
+<kw name="Repeat Until Branches Are Passed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="287">
+<arguments repr="min_percentage, *args">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="min_percentage">
+<name>min_percentage</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until Branches Are Executed  min_percentage  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and keeps repeating all the tree until the given percentage of branches, 
+every control flow nodes (selector or sequence) are not only executed but also passed in one of runs
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| min_percentage | number | percentage given in numbers 1 means 1% |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until Branches Are Executed  10  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until Branches Are Executed  min_percentage  *args</shortdoc>
+</kw>
+<kw name="Repeat Until Lines Are Executed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="242">
+<arguments repr="min_percentage, *args">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="min_percentage">
+<name>min_percentage</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until Lines Are Executed  min_percentage  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and keeps repeating all the tree until the given percentage of lines, 
+keywords are executed Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| min_percentage | number | percentage given in numbers 1 means 1% |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until Lines Are Executed  10  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until Lines Are Executed  min_percentage  *args</shortdoc>
+</kw>
+<kw name="Repeat Until Lines Are Passed" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\CoverageNodes.py" lineno="334">
+<arguments repr="min_percentage, *args">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="min_percentage">
+<name>min_percentage</name>
+</arg>
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Repeat Until Lines Are Passed  min_percentage  *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+This keyword takes a behavior tree as input
+and keeps repeating all the tree until the given percentage of lines, 
+keywords not only executed but also passed for at least on of runs
+Unless the tree fails
+
+Arguments:
+| Argument   | Type   | Description |
+| min_percentage | number | percentage given in numbers 1 means 1% |
+| *args      | string | Behavior Tree |
+
+Examples:
+| Repeat Until Lines Are Passed  10  One Should Pass  -  keyword1  -  keyword2  |</doc>
+<shortdoc>Repeat Until Lines Are Passed  min_percentage  *args</shortdoc>
+</kw>
+<kw name="Selector" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\BTNodes.py" lineno="65">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Selector *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+Selector corresponds the control node of Behavior Tree.
+It will pass as keyword if one of given children passes.
+
+Arguments:
+| Argument   | Type   | Description                     |
+| *args      | string | Children nodes in custom syntax |
+
+Examples:
+| Selector  -  keyword1  -  keyword2 |</doc>
+<shortdoc>Selector *args</shortdoc>
+</kw>
+<kw name="Sequence" source="c:\repos\RobotFramework-BehaviorTreeLibrary\src\BehaviorTreeLibrary\keywords\BTNodes.py" lineno="104">
+<arguments repr="*args">
+<arg kind="VAR_POSITIONAL" required="false" repr="*args">
+<name>args</name>
+</arg>
+</arguments>
+<doc>Sequence *args
+
+The custom syntax of *args is explained in `Nodes Syntax`.
+
+Sequence corresponds the control node of Behavior Tree.
+It will pass as keyword if all the given children pass.
+
+Arguments:
+| Argument   | Type   | Description                     |
+| *args      | string | Children nodes in custom syntax |
+
+Examples:
+| Sequence  -  keyword1  -  keyword2 |</doc>
+<shortdoc>Sequence *args</shortdoc>
+</kw>
+</keywords>
+<typedocs>
+</typedocs>
+</keywordspec>
