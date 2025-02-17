@@ -34,7 +34,11 @@ This project will be used to evaluate the benefits and drawbacks of using behavi
 To install the library, run the following command:
 
 ```
-./keen.bat install
+./runner.bat install
+```
+or 
+```
+./runner.sh install
 ```
 
 ## Usage
